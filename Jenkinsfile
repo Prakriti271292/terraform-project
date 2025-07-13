@@ -9,17 +9,17 @@ stages {
     }
     stage('initialise') {
         steps{
-            sh 'terraform init'
+            sh '/usr/bin/terraform init'
         }
     }
     stage('plan') {
         steps{
-            sh 'terraform plan'
+            sh '/usr/bin/terraform plan'
         }
     }
     stage('apply') {
         steps{
-            sh 'terraform apply'
+            sh '/usr/bin/terraform apply'
         }
     }
 }
