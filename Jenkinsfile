@@ -4,10 +4,15 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('aws_access_key')
         AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key')
     }
+    options {
+        timestamps()
+        ansiColor('xterm')
+    }
 stages {
     stage('Checkout') {
         steps{
-            git branch: 'main', url: 'https://github.com/Prakriti271292/terraform-project.git'
+            //git branch: 'main', url: 'https://github.com/Prakriti271292/terraform-project.git'
+            checkout scm
         }
     }
     stage('initialise') {
