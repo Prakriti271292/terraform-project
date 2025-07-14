@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('aws_access_key')
+        AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key')
+    }
 stages {
     stage('Checkout') {
         steps{
@@ -9,17 +12,17 @@ stages {
     }
     stage('initialise') {
         steps{
-            sh '/usr/bin/terraform init'
+            sh 'terraform init'
         }
     }
     stage('plan') {
         steps{
-            sh '/usr/bin/terraform plan'
+            sh 'terraform plan'
         }
     }
     stage('apply') {
         steps{
-            sh '/usr/bin/terraform apply'
+            sh '/terraform apply'
         }
     }
 }
