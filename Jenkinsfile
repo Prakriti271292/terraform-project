@@ -24,7 +24,7 @@ stages {
     }
     stage('plan') {
         steps{
-            sh 'terraform plan -var-file='terraform.tfvars' -var="igw_name='chochu-gateway'"'
+            sh '''terraform plan -var-file= terraform.tfvars -var="igw_name=chochu-gateway"'''
         }
     }
     stage('approval') {
