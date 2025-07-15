@@ -7,3 +7,5 @@ variable "ami" {
 variable "igw_name" {
      default= "chochu"
 }
+variable "from_port" {}
+variable "to_port" {}
