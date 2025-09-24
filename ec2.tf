@@ -8,6 +8,6 @@ resource "aws_instance" "chochu" {
   count = 2
 
   tags = {
-    Name = "Hello World-${count-index}"
+    Name = "Hello World-${count.index}"
   }
 }
