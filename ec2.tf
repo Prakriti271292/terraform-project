@@ -5,7 +5,9 @@ resource "aws_instance" "chochu" {
   vpc_security_group_ids = [aws_security_group.sec_grp.id]
   associate_public_ip_address = true
 
+  count = 2
+
   tags = {
-    Name = "Hello World"
+    Name = "Hello World${count-index}"
   }
 }
