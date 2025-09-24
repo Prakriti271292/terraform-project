@@ -36,7 +36,7 @@ stages {
     }
     stage('apply') {
         steps{
-            sh '''terraform apply -var-file=terraform.tfvars -var="igw_name=chochu"'''
+            sh '''terraform apply -var-file=terraform.tfvars -var="igw_name=chochu" -auto-approve'''
         }
     }
 }
