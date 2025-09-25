@@ -11,3 +11,5 @@ variable "allowed_ports" {
     type = list(number)
     default = [22,80]
 }
+variable "ssh_key" {}
+
