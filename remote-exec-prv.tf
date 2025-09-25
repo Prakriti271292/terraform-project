@@ -24,3 +24,4 @@ resource "aws_instance" "nginx_server" {
     Name = "nginx-server"
   }
 }
+
