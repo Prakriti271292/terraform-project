@@ -3,8 +3,6 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID = credentials('aws_access_key')
         AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key')
-        TF_VAR_from_port = 22 
-        TF_VAR_to_port = 22
     }
     options {
         timestamps()
