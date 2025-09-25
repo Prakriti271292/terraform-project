@@ -7,5 +7,7 @@ variable "ami" {
 variable "igw_name" {
      default= "chochu"
 }
-variable "from_port" {}
-variable "to_port" {}
+variable "allowed_ports" {
+    type = list(number)
+    default = [22,80]
+}
