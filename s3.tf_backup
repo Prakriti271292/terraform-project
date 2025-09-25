@@ -5,3 +5,12 @@ resource "aws_s3_bucket" "example" {
     Name        = "My bucket"
       }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "my-tf-test-bucket-chochu"
+    key = ""
+    region = ""
+    encrypt = true
+    }
+}
