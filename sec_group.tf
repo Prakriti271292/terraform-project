@@ -8,27 +8,14 @@ resource "aws_security_group" "sec_grp" {
      }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_tcp" {
+resource "aws_vpc_security_group_ingress_rule" "allow" {
+    for_each = toset(var.allowed_ports)
     security_group_id = aws_security_group.sec_grp.id
     cidr_ipv4 = "0.0.0.0/0"
-    from_port = var.from_port 
-    to_port = var.to_port
+    from_port = each.value
+    to_port = each.value
     ip_protocol = "tcp"
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_http" {
-    security_group_id = aws_security_group.sec_grp.id
-    cidr_ipv4 = "0.0.0.0/0"
-    from_port = var.from_port 
-    to_port = var.to_port
-    ip_protocol = "http"
-}
 
-resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
-    security_group_id = aws_security_group.sec_grp.id
-    cidr_ipv4 = "0.0.0.0/0"
-    from_port = var.from_port 
-    to_port = var.to_port
-    ip_protocol = "ssh"
-}
 
