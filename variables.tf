@@ -8,8 +8,8 @@ variable "igw_name" {
      default= "chochu"
 }
 variable "allowed_ports" {
-    type = list(number)
-    default = [22,80]
+    type = list(string)
+    default = ["22","80"]
 }
 variable "private_key" {}
 
